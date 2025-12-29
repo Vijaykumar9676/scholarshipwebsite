@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scholarship Support & Guidance Platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#eef3ff;
+  color:#111;
+}
+
+/* ===== HERO WITH FULL-SCREEN WATERMARK ===== */
+.hero{
+  background:
+  linear-gradient(to right, rgba(0,4,40,0.9), rgba(0,78,146,0.85)),
+  url("https://png.pngtree.com/png-vector/20220613/ourmid/pngtree-transparent-students-graduating-cap-png-image_5191870.png");
+  background-size:cover;
+  background-position:center;
+  padding:90px 10%;
+  color:white;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+/* FULL SCREEN WATERMARK */
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url("https://tse4.mm.bing.net/th/id/OIP.gYw65M75-iKJ_I6hpVJ7GQHaDm?w=600&h=292&rs=1&pid=ImgDetMain&o=7&rm=3")
+             no-repeat center/cover;
+  opacity:0.12;         /* Change opacity if needed */
+  pointer-events:none;
+}
+
+
+.hero h1{
+  font-size:3.3rem;
+  margin:0;
+  font-weight:800;
+  letter-spacing:.7px;
+}
+
+.hero p{
+  font-size:1.2rem;
+  opacity:.9;
+}
+
+.hero-line{
+  width:160px;
+  height:6px;
+  background:#ffc107;
+  border-radius:20px;
+  margin:15px auto 10px;
+}
+
+.section{
+  padding:60px 10%;
+}
+
+.section h2{
+  text-align:center;
+  font-size:2.4rem;
+  color:#00205b;
+}
+
+.line{
+  width:120px;
+  height:4px;
+  background:#ffc107;
+  border-radius:20px;
+  margin:10px auto 35px;
+}
+
+.card-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+  border-left:8px solid #002e9b;
+}
+
+.card h3{
+  color:#0a2c82;
+}
+
+.badge{
+  padding:6px 10px;
+  background:#ffc107;
+  border-radius:6px;
+  font-size:12px;
+  color:black;
+  font-weight:600;
+}
+
+.note-box{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  margin-top:20px;
+  box-shadow:0 6px 15px rgba(0,0,0,.1);
+}
+
+footer{
+  background:#001f54;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+}
+
+.high{
+  color:#0a7b12;
+  font-weight:700;
+}
+
+.feedback-btn{
+  display:inline-block;
+  padding:12px 20px;
+  background:#ffc107;
+  color:black;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  margin-top:10px;
+}
+
+.feedback-btn:hover{
+  background:#ff9800;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<section class="hero">
+  <h1>🎓 Global Scholarship Support Platform</h1>
+  <div class="hero-line"></div>
+  <p>Helping Indian students achieve fully funded international education opportunities</p>
+
+  <!-- FEEDBACK LINK -->
+  <a href="https://docs.google.com/forms/d/19qjPPFZESZXFuqccUrQsu3YMY1L29LZ9HLjZFJQpK74/viewform"
+     target="_blank"
+     class="feedback-btn">
+     Give Feedback
+  </a>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+<h2>🎯 Our Purpose & Mission</h2>
+<div class="line"></div>
+
+<div class="note-box">
+<p>
+This platform is created to support students who dream of studying abroad but struggle with information, guidance, and awareness about scholarships. Our mission is to provide:
+</p>
+<p>✔ Trusted Scholarship Information</p>
+<p>✔ Guidance & Motivation</p>
+<p>✔ Awareness & Support</p>
+<p>✔ Equal Opportunity for Every Student</p>
+</div>
+</section>
+
+<!-- MAIN SCHOLARSHIPS -->
+<section class="section">
+<h2>🌍 Top Fully Funded Scholarships</h2>
+<div class="line"></div>
+
+<div class="card-box">
+
+<div class="card">
+<h3>🇪🇺 Erasmus Mundus Scholarship</h3>
+<span class="badge">Europe</span>
+<p><b>Benefits:</b> 100% Tuition + Monthly Stipend + Travel</p>
+<p><b>Deadline:</b> Oct – March</p>
+</div>
+
+<div class="card">
+<h3>🇬🇧 Chevening Scholarship</h3>
+<span class="badge">UK</span>
+<p><b>Benefits:</b> Tuition + Monthly Stipend</p>
+<p><b>Deadline:</b> Aug – Nov</p>
+</div>
+
+<div class="card">
+<h3>🇺🇸 Fulbright Scholarship</h3>
+<span class="badge">USA</span>
+<p><b>Benefits:</b> Tuition + Stipend + Research</p>
+<p><b>Deadline:</b> Feb – Sept</p>
+</div>
+
+<div class="card">
+<h3>🇩🇪 DAAD Scholarship</h3>
+<span class="badge">Germany</span>
+<p><b>Benefits:</b> Stipend + Living Allowance</p>
+</div>
+
+<div class="card">
+<h3>🇫🇷 Eiffel Excellence Scholarship</h3>
+<span class="badge">France</span>
+<p><b>Benefits:</b> Stipend + Travel</p>
+</div>
+
+<div class="card">
+<h3>🇰🇷 Global Korea Scholarship (GKS)</h3>
+<span class="badge">South Korea</span>
+<p><b>Benefits:</b> Tuition + Stipend + Flight</p>
+</div>
+
+<div class="card">
+<h3>🇷🇴 Romania Government Scholarship</h3>
+<span class="badge">Romania</span>
+<p><b>Benefits:</b> Tuition + Hostel + Stipend</p>
+</div>
+
+<div class="card">
+<h3>🇨🇳 Chinese Government Scholarship (CSC)</h3>
+<span class="badge">China</span>
+<p><b>Benefits:</b> Tuition + Hostel + Stipend</p>
+</div>
+
+<div class="card">
+<h3>🇯🇵 MEXT Scholarship</h3>
+<span class="badge">Japan</span>
+<p><b>Benefits:</b> Tuition + Stipend + Flight</p>
+</div>
+
+<div class="card">
+<h3>🇦🇺 Australia Awards Scholarship</h3>
+<span class="badge">Australia</span>
+<p><b>Benefits:</b> Tuition + Stipend + Travel</p>
+</div>
+
+<div class="card">
+<h3>🇳🇿 Manaaki New Zealand Scholarship</h3>
+<span class="badge">New Zealand</span>
+<p><b>Benefits:</b> Tuition + Stipend + Living Support</p>
+</div>
+
+<div class="card">
+<h3>🇷🇺 Russia – Open Doors Scholarship</h3>
+<span class="badge">Russia</span>
+<p><b>Benefits:</b> Tuition + Accommodation + Stipend</p>
+</div>
+
+<div class="card">
+<h3>🇭🇺 Hungary – Stipendium Hungaricum</h3>
+<span class="badge">Hungary</span>
+<p><b>Benefits:</b> Tuition + Accommodation + Living Allowance</p>
+</div>
+
+<div class="card">
+<h3>🇬🇧 Commonwealth Scholarship</h3>
+<span class="badge">UK</span>
+<p><b>Benefits:</b> Tuition + Stipend + Travel</p>
+</div>
+
+<div class="card">
+<h3>🇶🇦 Qatar – QFBA / Commonwealth Scholarship</h3>
+<span class="badge">Qatar</span>
+<p><b>Benefits:</b> Tuition + Accommodation + Living Stipend</p>
+</div>
+
+</div>
+</section>
+
+<!-- DOCUMENT GUIDANCE -->
+<section class="section">
+<h2>📑 Document Guidance</h2>
+<div class="line"></div>
+
+<div class="card-box">
+<div class="card">
+<h3>SOP (Statement of Purpose)</h3>
+<p>Your SOP is your story. It explains:</p>
+<p>✔ Who you are</p>
+<p>✔ Your goals</p>
+<p>✔ Your achievements</p>
+<p>✔ Why you deserve scholarship</p>
+</div>
+
+<div class="card">
+<h3>Letters of Recommendation</h3>
+<p>
+Given by teachers or professionals who know your ability and character.
+</p>
+</div>
+
+<div class="card">
+<h3>Resume / CV</h3>
+<p>
+Your academic journey, achievements, projects, leadership and skills.
+</p>
+</div>
+</div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="section">
+<h2>🌏 Abroad Study Challenges & Our Solutions</h2>
+<div class="line"></div>
+
+<div class="card-box">
+<div class="card">
+<h3>Challenge: High Competition & Stress</h3>
+<p><b>Solution:</b> We provide clear guidance and SOP & CV examples to prepare students efficiently.</p>
+</div>
+
+<div class="card">
+<h3>Challenge: Confusing Documentation</h3>
+<p><b>Solution:</b> Step-by-step document guidance & checklist support for each scholarship.</p>
+</div>
+
+<div class="card">
+<h3>Challenge: Lack of Awareness</h3>
+<p><b>Solution:</b> Digital platform shares updated scholarship info, deadlines, eligibility & benefits.</p>
+</div>
+
+<div class="card">
+<h3>Challenge: Fear of Interviews & Visa</h3>
+<p><b>Solution:</b> Mock interviews, tips, and guidance to increase confidence.</p>
+</div>
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section">
+<h2>⏳ Realistic Timeline & Process</h2>
+<div class="line"></div>
+
+<div class="note-box">
+<p><b>6–8 Months Before:</b> Research scholarships & shortlist</p>
+<p><b>5 Months Before:</b> Start SOP & Resume</p>
+<p><b>4 Months Before:</b> Collect recommendation letters</p>
+<p><b>3 Months Before:</b> Prepare documents & certificates</p>
+<p><b>Before Deadline:</b> Apply confidently</p>
+<p><b>After Application:</b> Prepare for interview</p>
+<p><b>Final Stage:</b> Wait for results & visa process</p>
+</div>
+</section>
+
+<!-- SUPPORT -->
+<section class="section">
+<h2>🤝 Guidance & Support</h2>
+<div class="line"></div>
+
+<div class="note-box">
+<h3>If anyone needs help, feel free to contact me.</h3>
+<p>✔ Guidance</p>
+<p>✔ Resources</p>
+<p>✔ Motivation</p>
+<p>✔ Support</p>
+</div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="section">
+<h2>⚠️ Disclaimer</h2>
+<div class="line"></div>
+
+<div class="note-box">
+<p>
+This platform is created for educational and awareness purposes only. Scholarship details may change, so students are advised to always verify information from official scholarship websites before applying.
+</p>
+</div>
+</section>
+
+<!-- IMPACT -->
+<section class="section">
+<h2>🌟 Impact Statement</h2>
+<div class="line"></div>
+
+<div class="note-box">
+<p>
+“Created a Digital Scholarship Awareness Initiative to help Indian students access fully funded international scholarships by providing guidance, information, and motivation.
+</p>
+</div>
+</section>
+
+<footer>
+<h3>Scholarship Support Initiative</h3>
+<p>Created by Vijaykumar Ponnam — Helping Students Dream Bigger</p>
+</footer>
+
+</body>
+</html>
