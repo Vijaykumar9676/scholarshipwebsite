@@ -68,6 +68,7 @@ nav ul li a:hover{
 
 /* -------- MOBILE NAV -------- */
 @media(max-width:768px){
+
   nav{
     flex-wrap:wrap;
   }
@@ -88,6 +89,10 @@ nav ul li a:hover{
     width:100%;
     display:block;
     text-align:center;
+  }
+
+  nav ul.show{
+    display:flex !important;
   }
 }
 
@@ -346,14 +351,15 @@ footer{
 
 <script>
 function toggleMenu(){
-  const nav = document.getElementById('nav-links');
-  if(nav.style.display === "flex") nav.style.display = "none";
+  document.getElementById("nav-links").classList.toggle("show");
+}  if(nav.style.display === "flex") nav.style.display = "none";
   else nav.style.display = "flex";
 }
 </script>
 
 </body>
 </html>
+
 
 
 
