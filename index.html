@@ -8,15 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
+
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
   background:#f7fbff;
   color:#111;
+}
+
+/* ---------------- NAV HAMBURGER CSS ---------------- */
+.menu-toggle {
+  display:none;
+  font-size:1.8rem;
+  cursor:pointer;
+  color:#ffd43b;
 }
 
 /* NAVBAR */
@@ -59,6 +64,31 @@ nav ul li a{
 nav ul li a:hover{
   background:#ffd43b;
   color:#000;
+}
+
+/* -------- MOBILE NAV -------- */
+@media(max-width:768px){
+  nav{
+    flex-wrap:wrap;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav ul{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    margin-top:10px;
+    padding-left:0;
+  }
+
+  nav ul li a{
+    width:100%;
+    display:block;
+    text-align:center;
+  }
 }
 
 /* HERO */
@@ -105,7 +135,7 @@ nav ul li a:hover{
   transform:translateY(-2px);
 }
 
-/* SCROLLING UPDATES BAR */
+/* SCROLLING BAR */
 .update-bar{
   width:100%;
   background:#ffffff;
@@ -118,7 +148,7 @@ nav ul li a:hover{
   display:flex;
   gap:50px;
   white-space:nowrap;
-  animation:scroll 25s linear infinite; /* slower smooth scroll */
+  animation:scroll 25s linear infinite;
 }
 .update-item{
   font-weight:700;
@@ -214,10 +244,11 @@ footer{
 
 <body>
 
-<!-- NAV -->
 <nav>
   <h2>🎓 GlobalScholar</h2>
-  <ul>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul id="nav-links">
     <li><a href="scholarship.html">Scholarships</a></li>
     <li><a href="sopcv.html">SOP / CV Zone</a></li>
     <li><a href="#news">Scholarship News</a></li>
@@ -226,7 +257,6 @@ footer{
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="top">
   <h1>Global Scholarship Support Platform</h1>
   <div class="hero-line"></div>
@@ -238,7 +268,6 @@ footer{
   </div>
 </section>
 
-<!-- SCROLLING BAR -->
 <div class="update-bar">
   <div class="update-track">
       <div class="update-item">🎯 Erasmus Mundus EMJM — Applications Open</div>
@@ -248,8 +277,6 @@ footer{
   </div>
 </div>
 
-
-<!-- SCHOLARSHIP NEWS -->
 <section id="news" class="section">
   <h2 class="section-title">📰 Scholarship News & Deadlines</h2>
   <div class="line"></div>
@@ -261,7 +288,7 @@ footer{
         <h3>Erasmus Mundus Joint Masters (EMJM) 2026-27</h3>
         <span class="badge open">Open Now</span>
       </div>
-      <p>Applications are currently open for the 2026-27 intake. Don’t miss the chance to study in top European universities!</p>
+      <p>Applications are currently open for the 2026-27 intake.</p>
       <p><strong>Deadline:</strong> 15 Feb 2026</p>
       <a href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-joint-master-degrees_en" target="_blank" class="link-btn">Apply Now</a>
     </div>
@@ -271,7 +298,7 @@ footer{
         <h3>Stipendium Hungaricum 2026-27</h3>
         <span class="badge soon">Deadline Soon</span>
       </div>
-      <p>Fully funded scholarships for international students in Hungary. Submit your documents before the deadline!</p>
+      <p>Fully funded scholarships for international students in Hungary.</p>
       <p><strong>Deadline:</strong> 15 Mar 2026</p>
       <a href="https://stipendiumhungaricum.hu/" target="_blank" class="link-btn">Apply Now</a>
     </div>
@@ -281,7 +308,7 @@ footer{
         <h3>Russia Government Scholarship 2026-27</h3>
         <span class="badge open">Open Now</span>
       </div>
-      <p>Fully funded scholarships for international students in top Russian universities. Apply now to secure your spot!</p>
+      <p>Apply now to secure your spot!</p>
       <p><strong>Deadline:</strong> 30 Mar 2026</p>
       <a href="https://opendoors.russia.edu.ru/" target="_blank" class="link-btn">Apply Now</a>
     </div>
@@ -291,7 +318,7 @@ footer{
         <h3>Romania Government Scholarship 2026-27</h3>
         <span class="badge soon">Deadline Soon</span>
       </div>
-      <p>Fully funded Romanian government scholarships for international students. Hurry up and apply!</p>
+      <p>Fully funded Romanian government scholarships.</p>
       <p><strong>Deadline:</strong> 20 Apr 2026</p>
       <a href="https://www.studyinromania.gov.ro/" target="_blank" class="link-btn">Apply Now</a>
     </div>
@@ -301,28 +328,33 @@ footer{
   <a href="#top" class="link-btn">⬆ Back to Top</a>
 </section>
 
-
-<!-- DISCLAIMER -->
 <section id="disclaimer" class="section">
   <h2 class="section-title">⚠️ Disclaimer</h2>
   <div class="line"></div>
 
   <div class="note-box">
-    All information provided is for educational purposes only. Scholarship deadlines and requirements may change,
-    so always verify with the official scholarship website before applying.
+    All information provided is for educational purposes only.
   </div>
 
   <a href="#top" class="link-btn">⬆ Back to Top</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <h3>Scholarship Support Initiative</h3>
   <p>Created by Vijaykumar Ponnam — Helping Students Dream Bigger</p>
 </footer>
 
+<script>
+function toggleMenu(){
+  const nav = document.getElementById('nav-links');
+  if(nav.style.display === "flex") nav.style.display = "none";
+  else nav.style.display = "flex";
+}
+</script>
+
 </body>
 </html>
+
 
 
 
