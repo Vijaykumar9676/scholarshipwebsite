@@ -219,6 +219,11 @@ footer{
 
   nav{
     flex-wrap:wrap;
+    padding:10px 5%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
   }
 
   .menu-toggle{
@@ -231,6 +236,8 @@ footer{
     width:100%;
     margin-top:10px;
     padding-left:0;
+    background:#12306b;
+    border-radius:0 0 15px 15px;
   }
 
   nav ul li{
@@ -241,12 +248,68 @@ footer{
     width:100%;
     display:block;
     text-align:center;
+    padding:12px 0;
+    background:linear-gradient(135deg,#1f4fae,#2f6bde);
+    margin:2px 0;
   }
 
   nav ul.show{
     display:flex !important;
     flex-direction:column;
   }
+
+  /* HERO */
+  .hero{
+    padding:50px 5%;
+  }
+  .hero h1{
+    font-size:2rem;
+  }
+  .hero p{
+    font-size:1rem;
+  }
+  .hero-buttons{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  /* SCROLLING BAR */
+  .update-bar{
+    padding:8px 5px;
+  }
+  .update-track{
+    gap:25px;
+  }
+  .update-item{
+    font-size:0.9rem;
+  }
+
+  /* SECTION */
+  .section{
+    width:95%;
+    padding:30px 20px;
+  }
+  .section-title{
+    font-size:2rem;
+  }
+
+  /* CARDS */
+  .card-box{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .news-card{
+    padding:20px;
+  }
+
+  /* FEEDBACK BUTTON */
+  .feedback-btn{
+    width:100%;
+    text-align:center;
+    font-size:1rem;
+    padding:12px 0;
+  }
+}
 
   /* HERO */
   .hero{
@@ -402,6 +465,7 @@ function toggleMenu(){
 
 </body>
 </html>
+
 
 
 
