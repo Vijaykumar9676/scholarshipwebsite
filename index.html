@@ -24,44 +24,47 @@ nav{
   left:0;
   width:100%;
   background:#12306b;
-  padding:10px 5%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
   z-index:1000;
-  box-shadow:0 6px 25px rgba(0,0,0,.2);
-  border-bottom:2px solid #ffd43b;
+  box-shadow:0 4px 20px rgba(0,0,0,0.2);
 }
 
-/* Logo / Platform name */
-nav h2{
+/* Logo section */
+.nav-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:15px 5%;
+}
+.nav-logo h2{
   color:#ffd43b;
-  margin:0;
-  font-weight:800;
   font-size:1.8rem;
+  font-weight:800;
   display:flex;
   align-items:center;
-  gap:5px;
-  margin-bottom:10px;
+  gap:8px;
+  margin:0;
 }
 
-/* Nav links */
+/* Menu section under logo */
 nav ul{
-  list-style:none;
   display:flex;
-  gap:20px;
-  margin:0;
-  flex-wrap:wrap;
   justify-content:center;
+  gap:15px;
+  list-style:none;
+  margin:0;
+  padding:0 0 10px 0;
+  flex-wrap:wrap;
+  border-top:2px solid #ffd43b;
+  border-bottom:2px solid #ffd43b;
+  background:#0f3a80;
 }
 nav ul li a{
   color:#fff;
   text-decoration:none;
   font-weight:600;
   padding:10px 18px;
-  border-radius:10px;
+  border-radius:8px;
   background:linear-gradient(135deg,#1f4fae,#2f6bde);
-  box-shadow:0 4px 15px rgba(0,0,0,.15);
   transition:.3s;
 }
 nav ul li a:hover{
@@ -71,7 +74,7 @@ nav ul li a:hover{
 
 /* HERO */
 .hero{
-  margin-top:120px; /* enough space for navbar height */
+  margin-top:120px; /* navbar + menu height */
   background:linear-gradient(to right,#0d295f,#1f6bc4);
   padding:70px 10%;
   color:#fff;
@@ -221,13 +224,13 @@ footer{
 @media(max-width:768px){
   nav ul{
     flex-direction:column;
-    gap:10px;
+    gap:5px;
+    padding:10px 0;
   }
   nav ul li a{
     width:100%;
     text-align:center;
   }
-
   .hero{
     padding:50px 5%;
   }
@@ -241,7 +244,6 @@ footer{
     flex-direction:column;
     gap:10px;
   }
-
   .update-bar{
     padding:8px 5px;
   }
@@ -251,7 +253,6 @@ footer{
   .update-item{
     font-size:0.9rem;
   }
-
   .section{
     width:95%;
     padding:30px 20px;
@@ -259,7 +260,6 @@ footer{
   .section-title{
     font-size:2rem;
   }
-
   .card-box{
     grid-template-columns:1fr;
     gap:20px;
@@ -267,7 +267,6 @@ footer{
   .news-card{
     padding:20px;
   }
-
   .feedback-btn{
     width:100%;
     text-align:center;
@@ -281,12 +280,14 @@ footer{
 <body>
 
 <nav>
-  <h2>🎓 GlobalScholar</h2>
+  <div class="nav-logo">
+    <h2>🎓 GlobalScholar</h2>
+  </div>
   <ul id="nav-links">
-    <li><a href="#scholarships">Scholarships</a></li>
-    <li><a href="#sopcv">SOP / CV Zone</a></li>
+    <li><a href="scholarship.html">Scholarships</a></li>
+    <li><a href="sopcv.html">SOP / CV Zone</a></li>
     <li><a href="#news">Scholarship News</a></li>
-    <li><a href="#support">Support</a></li>
+    <li><a href="support.html">Support</a></li>
     <li><a href="#disclaimer">Disclaimer</a></li>
   </ul>
 </nav>
