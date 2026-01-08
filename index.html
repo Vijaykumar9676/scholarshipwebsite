@@ -26,13 +26,28 @@ nav{
   background:#12306b;
   padding:10px 5%;
   display:flex;
-  justify-content:center; /* center content horizontally */
+  justify-content:center; /* center the logo */
   align-items:center;
   z-index:1000;
   box-shadow:0 6px 25px rgba(0,0,0,.2);
   border-bottom:2px solid #ffd43b;
   flex-wrap:wrap;
 }
+
+/* Hamburger */
+.menu-toggle {
+  display:none;
+  font-size:1.8rem;
+  cursor:pointer;
+  color:#ffd43b;
+  position:absolute;
+  left:20px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1002;
+}
+
+/* Logo / Platform name */
 nav h2{
   color:#ffd43b;
   margin:0;
@@ -41,9 +56,9 @@ nav h2{
   display:flex;
   align-items:center;
   gap:5px;
-  z-index:1001;
-  position:relative;
 }
+
+/* Nav links */
 nav ul{
   list-style:none;
   display:flex;
@@ -63,19 +78,6 @@ nav ul li a{
 nav ul li a:hover{
   background:#ffd43b;
   color:#000;
-}
-
-/* HAMBURGER MENU */
-.menu-toggle {
-  display:none;
-  font-size:1.8rem;
-  cursor:pointer;
-  color:#ffd43b;
-  position:absolute;
-  left:20px;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:1002;
 }
 
 /* HERO */
@@ -228,6 +230,11 @@ footer{
 
 /* ---------------- MOBILE RESPONSIVE ---------------- */
 @media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
   nav ul{
     display:none;
     flex-direction:column;
@@ -317,10 +324,10 @@ footer{
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <h2>🎓 GlobalScholar</h2>
   <ul id="nav-links">
-    <li><a href="scholarship.html">Scholarships</a></li>
-    <li><a href="sopcv.html">SOP / CV Zone</a></li>
+    <li><a href="#scholarships">Scholarships</a></li>
+    <li><a href="#sopcv">SOP / CV Zone</a></li>
     <li><a href="#news">Scholarship News</a></li>
-    <li><a href="support.html">Support</a></li>
+    <li><a href="#support">Support</a></li>
     <li><a href="#disclaimer">Disclaimer</a></li>
   </ul>
 </nav>
@@ -383,7 +390,6 @@ function toggleMenu(){
 
 </body>
 </html>
-
 
 
 
