@@ -14,6 +14,7 @@ body{
   font-family:'Poppins',sans-serif;
   background:#f7fbff;
   color:#111;
+  scroll-behavior:smooth;
 }
 
 /* ---------------- NAVBAR ---------------- */
@@ -23,15 +24,15 @@ nav{
   left:0;
   width:100%;
   background:#12306b;
-  padding:15px 8%;
+  padding:10px 5%;
   display:flex;
-  justify-content:space-between;
+  justify-content:center; /* center content horizontally */
   align-items:center;
   z-index:1000;
   box-shadow:0 6px 25px rgba(0,0,0,.2);
   border-bottom:2px solid #ffd43b;
+  flex-wrap:wrap;
 }
-
 nav h2{
   color:#ffd43b;
   margin:0;
@@ -39,16 +40,16 @@ nav h2{
   font-size:1.8rem;
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:5px;
+  z-index:1001;
+  position:relative;
 }
-
 nav ul{
   list-style:none;
   display:flex;
   gap:20px;
   margin:0;
 }
-
 nav ul li a{
   color:#fff;
   text-decoration:none;
@@ -59,7 +60,6 @@ nav ul li a{
   box-shadow:0 4px 15px rgba(0,0,0,.15);
   transition:.3s;
 }
-
 nav ul li a:hover{
   background:#ffd43b;
   color:#000;
@@ -71,9 +71,14 @@ nav ul li a:hover{
   font-size:1.8rem;
   cursor:pointer;
   color:#ffd43b;
+  position:absolute;
+  left:20px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1002;
 }
 
-/* ---------------- HERO ---------------- */
+/* HERO */
 .hero{
   margin-top:80px;
   background:linear-gradient(to right,#0d295f,#1f6bc4);
@@ -117,7 +122,7 @@ nav ul li a:hover{
   transform:translateY(-2px);
 }
 
-/* ---------------- SCROLLING BAR ---------------- */
+/* SCROLLING BAR */
 .update-bar{
   width:100%;
   background:#ffffff;
@@ -142,7 +147,7 @@ nav ul li a:hover{
   100%{transform:translateX(-100%);}
 }
 
-/* ---------------- SECTION ---------------- */
+/* SECTION */
 .section{
   width:90%;
   margin:70px auto;
@@ -164,7 +169,7 @@ nav ul li a:hover{
   margin:15px auto 35px;
 }
 
-/* ---------------- CARDS ---------------- */
+/* CARDS */
 .card-box{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -204,7 +209,7 @@ nav ul li a:hover{
   background:#ffb703;
 }
 
-/* ---------------- DISCLAIMER ---------------- */
+/* DISCLAIMER BOX */
 .note-box{
   background:#eef4ff;
   padding:20px;
@@ -212,7 +217,7 @@ nav ul li a:hover{
   border-left:6px solid #1f4fae;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* FOOTER */
 footer{
   text-align:center;
   background:#12306b;
@@ -223,17 +228,6 @@ footer{
 
 /* ---------------- MOBILE RESPONSIVE ---------------- */
 @media(max-width:768px){
-  nav{
-    flex-wrap:wrap;
-    padding:10px 5%;
-  }
-
-  /* Hamburger left side */
-  .menu-toggle{
-    display:block;
-    order:-1; /* moves it before logo */
-  }
-
   nav ul{
     display:none;
     flex-direction:column;
@@ -244,8 +238,8 @@ footer{
     border-radius:0 0 15px 15px;
   }
 
-  nav ul.show{
-    display:flex !important;
+  nav ul li{
+    margin:5px 0;
   }
 
   nav ul li a{
@@ -255,6 +249,11 @@ footer{
     padding:12px 0;
     background:linear-gradient(135deg,#1f4fae,#2f6bde);
     margin:2px 0;
+  }
+
+  nav ul.show{
+    display:flex !important;
+    flex-direction:column;
   }
 
   /* HERO */
@@ -318,11 +317,10 @@ footer{
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <h2>🎓 GlobalScholar</h2>
   <ul id="nav-links">
-    <li><a href="#top">Home</a></li>
-    <li><a href="scholarship.html">Scholarships</a></li>
-    <li><a href="sopcv.html">SOP / CV Zone</a></li>
+    <li><a href="#scholarships">Scholarships</a></li>
+    <li><a href="#sopcv">SOP / CV Zone</a></li>
     <li><a href="#news">Scholarship News</a></li>
-    <li><a href="support.html">Support</a></li>
+    <li><a href="#support">Support</a></li>
     <li><a href="#disclaimer">Disclaimer</a></li>
   </ul>
 </nav>
@@ -332,7 +330,8 @@ footer{
   <div class="hero-line"></div>
   <p>Helping students achieve fully funded international scholarships</p>
   <div class="hero-buttons">
-    <a href="https://docs.google.com/forms/d/19qjPPFZESZXFuqccUrQsu3YMY1L29LZ9HLjZFJQpK74/viewform" target="_blank" class="feedback-btn">Give Feedback</a>
+    <a href="https://docs.google.com/forms/d/19qjPPFZESZXFuqccUrQsu3YMY1L29LZ9HLjZFJQpK74/viewform"
+       target="_blank" class="feedback-btn">Give Feedback</a>
   </div>
 </section>
 
@@ -357,33 +356,6 @@ footer{
       <p>Applications are currently open for the 2026-27 intake.</p>
       <p><strong>Deadline:</strong> 15 Feb 2026</p>
       <a href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-joint-master-degrees_en" target="_blank" class="link-btn">Apply Now</a>
-    </div>
-    <div class="card news-card">
-      <div class="card-header">
-        <h3>Stipendium Hungaricum 2026-27</h3>
-        <span class="badge soon">Deadline Soon</span>
-      </div>
-      <p>Fully funded scholarships for international students in Hungary.</p>
-      <p><strong>Deadline:</strong> 15 Mar 2026</p>
-      <a href="https://stipendiumhungaricum.hu/" target="_blank" class="link-btn">Apply Now</a>
-    </div>
-    <div class="card news-card">
-      <div class="card-header">
-        <h3>Russia Government Scholarship 2026-27</h3>
-        <span class="badge open">Open Now</span>
-      </div>
-      <p>Apply now to secure your spot!</p>
-      <p><strong>Deadline:</strong> 30 Mar 2026</p>
-      <a href="https://opendoors.russia.edu.ru/" target="_blank" class="link-btn">Apply Now</a>
-    </div>
-    <div class="card news-card">
-      <div class="card-header">
-        <h3>Romania Government Scholarship 2026-27</h3>
-        <span class="badge soon">Deadline Soon</span>
-      </div>
-      <p>Fully funded Romanian government scholarships.</p>
-      <p><strong>Deadline:</strong> 20 Apr 2026</p>
-      <a href="https://www.studyinromania.gov.ro/" target="_blank" class="link-btn">Apply Now</a>
     </div>
   </div>
   <a href="#top" class="link-btn">⬆ Back to Top</a>
@@ -411,6 +383,7 @@ function toggleMenu(){
 
 </body>
 </html>
+
 
 
 
