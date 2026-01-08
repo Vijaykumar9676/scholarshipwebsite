@@ -85,6 +85,10 @@ nav ul li a:hover{
     padding-left:0;
   }
 
+  nav ul li{
+    margin:5px 0;
+  }
+
   nav ul li a{
     width:100%;
     display:block;
@@ -93,6 +97,13 @@ nav ul li a:hover{
 
   nav ul.show{
     display:flex !important;
+  }
+}
+
+  /* FIX ADDED — shows menu */
+  nav ul.show{
+    display:flex !important;
+    flex-direction:column;
   }
 }
 
@@ -352,13 +363,11 @@ footer{
 <script>
 function toggleMenu(){
   document.getElementById("nav-links").classList.toggle("show");
-}  if(nav.style.display === "flex") nav.style.display = "none";
-  else nav.style.display = "flex";
 }
 </script>
 
 </body>
-</html>
+</html>   
 
 
 
