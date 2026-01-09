@@ -2,429 +2,959 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Top Fully Funded Scholarships</title>
+<title>GlobalScholar | Fully Funded Scholarships Directory</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-
-body{
-  font-family: Poppins, sans-serif;
-  margin:0;
-  background:#0b1221;
-  color:white;
+/* ===== VARIABLES & RESET ===== */
+:root {
+    --primary-dark: #0A2463;
+    --primary-blue: #1E40AF;
+    --accent-blue: #3B82F6;
+    --accent-cyan: #06B6D4;
+    --dark-bg: #0F172A;
+    --card-bg: #1E293B;
+    --light-bg: #F8FAFC;
+    --text-light: #E2E8F0;
+    --text-muted: #94A3B8;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
-.section{
-  padding:60px 10%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.title{
-  font-size:32px;
-  font-weight:800;
-  text-align:center;
-  margin-bottom:30px;
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-.scholar-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:25px;
+/* ===== HEADER ===== */
+.main-header {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 5%;
+    border-bottom: 2px solid var(--accent-cyan);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.card{
-  background:#121b33;
-  border:1px solid #23345c;
-  border-radius:14px;
-  padding:25px;
-  transition:0.4s;
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card:hover{
-  transform:translateY(-5px);
-  border-color:#29d8ff;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.card h3{
-  margin-top:0;
-  font-size:22px;
-  color:#29d8ff;
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
 }
 
-.tag{
-  display:inline-block;
-  padding:5px 12px;
-  border-radius:20px;
-  background:#1f2f54;
-  margin-bottom:10px;
-  font-size:13px;
+.logo-text h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--text-light), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.card ul{
-  margin:0;
-  padding-left:18px;
-  line-height:1.6;
+.search-filter {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 18px;
-  border-radius:25px;
-  background:#29d8ff;
-  color:#000;
-  text-decoration:none;
-  font-weight:600;
+.search-box {
+    position: relative;
 }
 
+.search-box input {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: white;
+    padding: 0.8rem 2.5rem 0.8rem 1rem;
+    border-radius: 25px;
+    width: 250px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+.search-box i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.filter-btn {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: var(--accent-blue);
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    padding: 4rem 5% 3rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-light), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    display: block;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== FILTERS SECTION ===== */
+.filters-section {
+    padding: 0 5% 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.filter-tag {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--text-muted);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.filter-tag:hover, .filter-tag.active {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    color: white;
+    border-color: transparent;
+}
+
+/* ===== SCHOLARSHIP GRID ===== */
+.scholarship-container {
+    padding: 0 5% 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.scholarship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.scholarship-card {
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    position: relative;
+    height: 100%;
+}
+
+.scholarship-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    padding: 1.5rem 1.5rem 0;
+}
+
+.scholarship-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.country-flag {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.card-body {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-weight: bold;
+}
+
+.card-footer {
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.5);
+    border-top: 1px solid rgba(59, 130, 246, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deadline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.deadline i {
+    color: var(--accent-cyan);
+}
+
+.apply-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.apply-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--text-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.page-btn:hover, .page-btn.active {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    border-color: transparent;
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background: rgba(15, 23, 42, 0.95);
+    padding: 3rem 5%;
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(59, 130, 246, 0.1);
+    padding-top: 1.5rem;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 100;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .scholarship-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .search-filter {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .search-box input {
+        width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 2.3rem;
+    }
+    
+    .scholarship-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-container {
+        gap: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .filter-tags {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .card-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
 </style>
 </head>
 
 <body>
 
-<section class="section">
-  <h2 class="title">🌍 Top Fully Funded Scholarships</h2>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-content">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="logo-text">
+                <h1>GlobalScholar</h1>
+            </div>
+        </div>
+        
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" placeholder="Search scholarships..." id="searchInput">
+                <i class="fas fa-search"></i>
+            </div>
+            <button class="filter-btn" id="filterToggle">
+                <i class="fas fa-filter"></i> Filter
+            </button>
+        </div>
+    </div>
+</header>
 
-  <div class="scholar-container">
-
-<!-- 1 ERASMUS -->
-<div class="card">
-<span class="tag">Europe • Oct–Jan</span>
-<h3>🇪🇺 Erasmus Mundus Joint Masters (MS)</h3>
-<ul>
-<li>Full Tuition Fee</li>
-<li>€1,000 Monthly Stipend</li>
-<li>Travel Allowance</li>
-<li>Insurance Included</li>
-<li>Study in 2–3 European Countries</li>
-</ul>
-<a class="btn" href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en" target="_blank">Official Apply</a>
-</div>
-
-<!-- 2 RUSSIA -->
-<div class="card">
-<span class="tag">Russia</span>
-<h3>🇷🇺 Open Doors Scholarship (BS, MS, PhD)</h3>
-<ul>
-<li>Full Tuition Fee</li>
-<li>Study in Top Russian Universities</li>
-<li>Multiple Fields Available</li>
-<li>Highly Competitive</li>
-</ul>
-<a class="btn" href="https://od.globaluni.ru/en/" target="_blank">Official Apply</a>
-</div>
-
-<!-- 3 CHINA CSC -->
-<div class="card">
-<span class="tag">China • Dec–Mar</span>
-<h3>🇨🇳 Chinese Government Scholarship (CSC)</h3>
-<ul>
-<li>Full Tuition Fee</li>
-<li>Free Dormitory</li>
-<li>Health Insurance</li>
-<li>Monthly Stipend</li>
-</ul>
-<a class="btn" href="https://www.campuschina.org" target="_blank">Official Apply</a>
-</div>
-
-<!-- 4 HUNGARY -->
-<div class="card">
-<span class="tag">Hungary • Nov–Jan</span>
-<h3>🇭🇺 Stipendium Hungaricum (BS, MS, PhD)</h3>
-<ul>
-<li>Full Tuition Fee</li>
-<li>Monthly Stipend</li>
-<li>Accommodation Support</li>
-<li>Health Insurance</li>
-</ul>
-<a class="btn" href="https://stipendiumhungaricum.hu/" target="_blank">Official Apply</a>
-</div>
-
-<!-- NOW REST OF LIST IN SAME STYLE -->
-<!-- 5 Fulbright -->
-<div class="card">
-<h3>🇺🇸 Fulbright Scholarship (MS, PhD)</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Living Stipend</li>
-<li>Health Insurance</li>
-<li>Travel Support</li>
-</ul>
-<a class="btn" href="https://foreign.fulbrightonline.org/" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇬🇧 Gates Cambridge Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>£18,744 Annual Stipend</li>
-<li>Airfare</li>
-</ul>
-<a class="btn" href="https://www.gatescambridge.org/" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇬🇧 Chevening Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Monthly Stipend</li>
-<li>Return Air Ticket</li>
-</ul>
-<a class="btn" href="https://www.chevening.org/" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇬🇧 Commonwealth Shared Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Living Allowance</li>
-<li>Travel Support</li>
-</ul>
-<a class="btn" href="https://cscuk.fcdo.gov.uk/" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇨🇳 Beijing Government Scholarship</h3>
-<ul>
-<li>Full / Partial Tuition</li>
-<li>Accommodation Support</li>
-</ul>
-<a class="btn" href="https://english.beijing.gov.cn/" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇩🇪 DAAD Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Monthly Stipend</li>
-<li>Insurance</li>
-</ul>
-<a class="btn" href="https://www.daad.de" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇨🇳 Shanghai Government Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Accommodation</li>
-<li>Stipend</li>
-</ul>
-<a class="btn" href="https://study.edu.sh.gov.cn" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇫🇷 Eiffel Excellence Scholarship</h3>
-<ul>
-<li>Monthly Stipend</li>
-<li>Insurance</li>
-<li>Travel</li>
-</ul>
-<a class="btn" href="https://www.campusfrance.org" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇮🇹 Italian Government Scholarship</h3>
-<ul>
-<li>Tuition Support</li>
-<li>Stipend</li>
-</ul>
-<a class="btn" href="https://studyinitaly.esteri.it" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇨🇭 Swiss Government Excellence Scholarship</h3>
-<ul>
-<li>PhD Only</li>
-<li>Full Funding</li>
-</ul>
-<a class="btn" href="https://www.sbfi.admin.ch" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇳🇱 Orange Knowledge Programme</h3>
-<ul>
-<li>Full Funding</li>
-<li>Living Expenses</li>
-</ul>
-<a class="btn" href="https://www.studyinnl.org" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇳🇱 Amsterdam Merit Scholarship</h3>
-<ul>
-<li>Partial / Full Tuition</li>
-</ul>
-<a class="btn" href="https://www.uva.nl" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇸🇪 Swedish Institute Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Monthly Stipend</li>
-</ul>
-<a class="btn" href="https://si.se/en/" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇩🇰 Danish Government Scholarship</h3>
-<ul>
-<li>Tuition Waiver</li>
-<li>Grant</li>
-</ul>
-<a class="btn" href="https://studyindenmark.dk" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇦🇹 Austrian Government Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Stipend</li>
-</ul>
-<a class="btn" href="https://oead.at" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇹🇷 Turkey Burslari</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Stipend</li>
-<li>Accommodation</li>
-</ul>
-<a class="btn" href="https://turkiyeburslari.gov.tr" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇨🇳 ANSO Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Stipend</li>
-</ul>
-<a class="btn" href="https://www.anso.org.cn" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇰🇷 GKS Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Stipend</li>
-</ul>
-<a class="btn" href="https://studyinkorea.go.kr" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇯🇵 MEXT Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Stipend</li>
-</ul>
-<a class="btn" href="https://www.mext.go.jp" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇸🇬 SINGA Scholarship</h3>
-<ul>
-<li>Full Funding</li>
-</ul>
-<a class="btn" href="https://www.a-star.edu.sg/singa" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇸🇬 NTU Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-</ul>
-<a class="btn" href="https://www.ntu.edu.sg" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇭🇰 Hong Kong PhD Fellowship</h3>
-<ul>
-<li>Full Funding</li>
-</ul>
-<a class="btn" href="https://cerg1.ugc.edu.hk/hkphd" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇦🇺 Australian RTP</h3>
-<ul>
-<li>Full Tuition</li>
-<li>Stipend</li>
-</ul>
-<a class="btn" href="https://www.education.gov.au" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇲🇾 MIS Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-</ul>
-<a class="btn" href="https://mis.moe.gov.my" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇮🇩 KNB Scholarship</h3>
-<ul>
-<li>Full Funding</li>
-</ul>
-<a class="btn" href="https://knb.kemdikbud.go.id" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇧🇳 Brunei Government Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-</ul>
-<a class="btn" href="https://www.mfa.gov.bn" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇮🇪 Ireland Government Scholarship</h3>
-<ul>
-<li>Full Funding</li>
-</ul>
-<a class="btn" href="https://hea.ie" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇬🇷 Greece Government Scholarship</h3>
-<ul>
-<li>Tuition Support</li>
-</ul>
-<a class="btn" href="https://www.iky.gr" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇹🇭 Thailand Government Scholarship</h3>
-<ul>
-<li>Full Tuition</li>
-</ul>
-<a class="btn" href="https://www.thaigov.go.th" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇨🇦 Lester B Pearson (BS)</h3>
-<ul>
-<li>Full Funding</li>
-</ul>
-<a class="btn" href="https://future.utoronto.ca" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇹🇼 Taiwan Government Scholarship</h3>
-<ul>
-<li>Full Funding</li>
-</ul>
-<a class="btn" href="https://www.studyintaiwan.org" target="_blank">Official Apply</a>
-</div>
-
-<div class="card">
-<h3>🇸🇦 KAUST Scholarship</h3>
-<ul>
-<li>Full Funding</li>
-<li>High Monthly Stipend</li>
-</ul>
-<a class="btn" href="https://www.kaust.edu.sa" target="_blank">Official Apply</a>
-</div>
-
-</div>
+<!-- Hero Section -->
+<section class="hero-section">
+    <h1 class="hero-title">Global Scholarship Database</h1>
+    <p class="hero-subtitle">Browse through 50+ fully funded scholarship opportunities from governments and universities worldwide</p>
+    
+    <div class="stats-container">
+        <div class="stat-item">
+            <span class="stat-number" id="totalScholarships">50+</span>
+            <span class="stat-label">Scholarships</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="countriesCount">30+</span>
+            <span class="stat-label">Countries</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Fully Funded</span>
+        </div>
+    </div>
 </section>
+
+<!-- Filters -->
+<section class="filters-section" id="filtersSection" style="display: none;">
+    <div class="filter-tags">
+        <span class="filter-tag active" data-filter="all">All Scholarships</span>
+        <span class="filter-tag" data-filter="europe">🇪🇺 Europe</span>
+        <span class="filter-tag" data-filter="asia">🌏 Asia</span>
+        <span class="filter-tag" data-filter="america">🌎 Americas</span>
+        <span class="filter-tag" data-filter="masters">🎓 Masters</span>
+        <span class="filter-tag" data-filter="phd">🔬 PhD</span>
+        <span class="filter-tag" data-filter="bachelors">📚 Bachelors</span>
+        <span class="filter-tag" data-filter="deadline">⏰ Deadline Soon</span>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="scholarship-container">
+    <div class="scholarship-grid" id="scholarshipGrid">
+        <!-- Cards will be populated by JavaScript -->
+    </div>
+    
+    <div class="pagination" id="pagination">
+        <!-- Pagination will be populated by JavaScript -->
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <p class="footer-text">GlobalScholar provides comprehensive information about fully funded scholarship opportunities worldwide. Always verify details with official sources before applying.</p>
+        <p class="copyright">© 2026 GlobalScholar. Created by Vijaykumar Ponnam. All scholarship information is for educational purposes only.</p>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- JavaScript -->
+<script>
+// Scholarship Data
+const scholarships = [
+    {
+        id: 1,
+        title: "Erasmus Mundus Joint Masters",
+        country: "🇪🇺",
+        tag: "Europe • Oct–Jan",
+        level: "Masters",
+        region: "europe",
+        benefits: [
+            "Full Tuition Fee Coverage",
+            "€1,000+ Monthly Stipend",
+            "Travel Allowance Included",
+            "Health Insurance Provided",
+            "Study in 2–3 European Countries"
+        ],
+        deadline: "Jan - Mar 2026",
+        link: "https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en"
+    },
+    {
+        id: 2,
+        title: "Open Doors Scholarship",
+        country: "🇷🇺",
+        tag: "Russia",
+        level: "Bachelors, Masters, PhD",
+        region: "europe",
+        benefits: [
+            "Full Tuition Fee Coverage",
+            "Study in Top Russian Universities",
+            "Wide Range of Academic Fields",
+            "Highly Competitive Program",
+            "International Recognition"
+        ],
+        deadline: "Dec 2025",
+        link: "https://od.globaluni.ru/en/"
+    },
+    {
+        id: 3,
+        title: "Chinese Government Scholarship (CSC)",
+        country: "🇨🇳",
+        tag: "China • Dec–Mar",
+        level: "Masters, PhD",
+        region: "asia",
+        benefits: [
+            "Full Tuition Fee Coverage",
+            "Free University Dormitory",
+            "Comprehensive Health Insurance",
+            "Monthly Living Stipend",
+            "Chinese Language Course"
+        ],
+        deadline: "Feb - Apr 2026",
+        link: "https://www.campuschina.org"
+    },
+    {
+        id: 4,
+        title: "Stipendium Hungaricum",
+        country: "🇭🇺",
+        tag: "Hungary • Nov–Jan",
+        level: "Bachelors, Masters, PhD",
+        region: "europe",
+        benefits: [
+            "Full Tuition Fee Waiver",
+            "Monthly Stipend Provided",
+            "Accommodation Support",
+            "Comprehensive Health Insurance",
+            "Travel Allowance"
+        ],
+        deadline: "Jan 15, 2026",
+        link: "https://stipendiumhungaricum.hu/"
+    },
+    {
+        id: 5,
+        title: "Fulbright Scholarship",
+        country: "🇺🇸",
+        tag: "USA",
+        level: "Masters, PhD",
+        region: "america",
+        benefits: [
+            "Full Tuition Coverage",
+            "Monthly Living Stipend",
+            "Health Insurance",
+            "International Travel Support",
+            "Research Allowance"
+        ],
+        deadline: "Oct 2025",
+        link: "https://foreign.fulbrightonline.org/"
+    },
+    {
+        id: 6,
+        title: "Gates Cambridge Scholarship",
+        country: "🇬🇧",
+        tag: "UK",
+        level: "PhD",
+        region: "europe",
+        benefits: [
+            "Full University Tuition",
+            "£18,744 Annual Stipend",
+            "International Airfare",
+            "Research Allowance",
+            "Family Support"
+        ],
+        deadline: "Oct 2025",
+        link: "https://www.gatescambridge.org/"
+    },
+    {
+        id: 7,
+        title: "Chevening Scholarship",
+        country: "🇬🇧",
+        tag: "UK",
+        level: "Masters",
+        region: "europe",
+        benefits: [
+            "Full Tuition Fees",
+            "Monthly Stipend",
+            "Return Air Ticket",
+            "Arrival Allowance",
+            "Thesis Grant"
+        ],
+        deadline: "Nov 2025",
+        link: "https://www.chevening.org/"
+    },
+    {
+        id: 8,
+        title: "DAAD Scholarship",
+        country: "🇩🇪",
+        tag: "Germany",
+        level: "Masters, PhD",
+        region: "europe",
+        benefits: [
+            "Full Tuition Coverage",
+            "Monthly Stipend",
+            "Health Insurance",
+            "Travel Allowance",
+            "Research Grants"
+        ],
+        deadline: "Varies",
+        link: "https://www.daad.de"
+    },
+    {
+        id: 9,
+        title: "Swiss Government Excellence",
+        country: "🇨🇭",
+        tag: "Switzerland",
+        level: "PhD",
+        region: "europe",
+        benefits: [
+            "PhD Research Scholarship",
+            "Full Funding Coverage",
+            "Monthly Stipend",
+            "Health Insurance",
+            "Research Allowance"
+        ],
+        deadline: "Sep 2025",
+        link: "https://www.sbfi.admin.ch"
+    },
+    {
+        id: 10,
+        title: "MEXT Scholarship",
+        country: "🇯🇵",
+        tag: "Japan",
+        level: "Bachelors, Masters, PhD",
+        region: "asia",
+        benefits: [
+            "Full Tuition Fees",
+            "Monthly Allowance",
+            "Travel to Japan",
+            "Japanese Language Course",
+            "Research Support"
+        ],
+        deadline: "May 2025",
+        link: "https://www.mext.go.jp"
+    }
+    // Additional scholarships can be added here
+];
+
+// DOM Elements
+const scholarshipGrid = document.getElementById('scholarshipGrid');
+const searchInput = document.getElementById('searchInput');
+const filterToggle = document.getElementById('filterToggle');
+const filtersSection = document.getElementById('filtersSection');
+const filterTags = document.querySelectorAll('.filter-tag');
+const backToTop = document.getElementById('backToTop');
+
+// Initialize
+let currentFilter = 'all';
+let currentPage = 1;
+const scholarshipsPerPage = 9;
+
+// Render scholarships
+function renderScholarships(filteredScholarships = scholarships) {
+    const startIndex = (currentPage - 1) * scholarshipsPerPage;
+    const endIndex = startIndex + scholarshipsPerPage;
+    const paginatedScholarships = filteredScholarships.slice(startIndex, endIndex);
+    
+    scholarshipGrid.innerHTML = '';
+    
+    paginatedScholarships.forEach(scholarship => {
+        const card = document.createElement('div');
+        card.className = 'scholarship-card fade-in';
+        card.innerHTML = `
+            <div class="card-header">
+                <span class="scholarship-tag">${scholarship.tag}</span>
+                <h3 class="card-title">
+                    <span class="country-flag">${scholarship.country}</span>
+                    ${scholarship.title}
+                </h3>
+            </div>
+            <div class="card-body">
+                <ul class="benefits-list">
+                    ${scholarship.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="card-footer">
+                <div class="deadline">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Deadline: ${scholarship.deadline}</span>
+                </div>
+                <a href="${scholarship.link}" target="_blank" class="apply-btn">
+                    <i class="fas fa-external-link-alt"></i> Apply Now
+                </a>
+            </div>
+        `;
+        scholarshipGrid.appendChild(card);
+    });
+    
+    renderPagination(filteredScholarships.length);
+}
+
+// Render pagination
+function renderPagination(totalScholarships) {
+    const totalPages = Math.ceil(totalScholarships / scholarshipsPerPage);
+    const pagination = document.getElementById('pagination');
+    
+    if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+    }
+    
+    let paginationHTML = '';
+    
+    // Previous button
+    paginationHTML += `
+        <button class="page-btn ${currentPage === 1 ? 'disabled' : ''}" 
+                onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    `;
+    
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+            paginationHTML += `
+                <button class="page-btn ${currentPage === i ? 'active' : ''}" 
+                        onclick="changePage(${i})">
+                    ${i}
+                </button>
+            `;
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += `<span class="page-btn">...</span>`;
+        }
+    }
+    
+    // Next button
+    paginationHTML += `
+        <button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" 
+                onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    `;
+    
+    pagination.innerHTML = paginationHTML;
+}
+
+// Change page
+function changePage(page) {
+    currentPage = page;
+    filterScholarships();
+    window.scrollTo({ top: 500, behavior: 'smooth' });
+}
+
+// Filter scholarships
+function filterScholarships() {
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    let filtered = scholarships.filter(scholarship => {
+        const matchesSearch = scholarship.title.toLowerCase().includes(searchTerm) ||
+                            scholarship.country.toLowerCase().includes(searchTerm) ||
+                            scholarship.tag.toLowerCase().includes(searchTerm);
+        
+        const matchesFilter = currentFilter === 'all' ||
+                            scholarship.region === currentFilter ||
+                            scholarship.level.toLowerCase().includes(currentFilter) ||
+                            (currentFilter === 'deadline' && scholarship.deadline.includes('2025'));
+        
+        return matchesSearch && matchesFilter;
+    });
+    
+    currentPage = 1;
+    renderScholarships(filtered);
+    
+    // Update counts
+    document.getElementById('totalScholarships').textContent = `${filtered.length}+`;
+    const uniqueCountries = [...new Set(filtered.map(s => s.country))].length;
+    document.getElementById('countriesCount').textContent = `${uniqueCountries}+`;
+}
+
+// Event Listeners
+searchInput.addEventListener('input', filterScholarships);
+
+filterToggle.addEventListener('click', () => {
+    filtersSection.style.display = filtersSection.style.display === 'none' ? 'block' : 'none';
+});
+
+filterTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+        filterTags.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+        currentFilter = tag.dataset.filter;
+        filterScholarships();
+    });
+});
+
+// Back to top functionality
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+backToTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Initialize
+renderScholarships();
+
+// Add fade-in animation on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.scholarship-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+</script>
+</body>
+</html>
+
