@@ -2,179 +2,1001 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Scholarship SOP & CV Support</title>
+<title>SOP & CV Guide | GlobalScholar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  background:#f4f6fb;
-  font-family:'Poppins',sans-serif;
-  color:#333;
+/* ===== VARIABLES & RESET ===== */
+:root {
+    --primary-dark: #0A2463;
+    --primary-blue: #1E40AF;
+    --accent-gold: #F59E0B;
+    --accent-cyan: #06B6D4;
+    --light-bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text-dark: #1F2937;
+    --text-light: #6B7280;
+    --border-color: #E5E7EB;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+    --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+    --border-radius: 16px;
+    --transition: all 0.3s ease;
 }
 
-/* HEADER */
-header{
-  padding:70px 10%;
-  text-align:center;
-  background:linear-gradient(135deg,#c8d1c3,#363e53,#ab6a8b);
-  color:white;
-}
-header h1{
-  font-size:40px;
-  margin:0;
-}
-header p{
-  opacity:.95;
-  margin-top:12px;
-  font-size:17px;
-}
-.tag{
-  display:inline-block;
-  margin-top:15px;
-  background:#ffffff10;
-  padding:7px 16px;
-  border-radius:30px;
-  font-size:13px;
-  border:1px solid #60a5fa;
-  color:#e0f2fe;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* SECTION */
-.section{
-  width:80%;
-  margin:40px auto;
-  background:white;
-  padding:40px;
-  border-radius:16px;
-  border:1px solid #e5e7eb;
-  box-shadow:0 10px 28px rgba(0,0,0,.08);
-}
-.section h2{
-  color:#1e3a8a;
-  margin-bottom:12px;
-}
-.section h3{
-  color:#0ea5e9;
-}
-.section p{
-  line-height:1.9;
-  color:#444;
-}
-ul li{
-  margin:8px 0;
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:35px 0;
-  background:#0f172a;
-  margin-top:40px;
+/* ===== HEADER ===== */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+    padding: 5rem 5% 4rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
 }
-footer p{
-  opacity:.9;
-  color:#9ca3af;
-  font-size:14px;
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.header-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+}
+
+.header-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.7rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* ===== NAVIGATION ===== */
+.tab-navigation {
+    max-width: 1200px;
+    margin: -2rem auto 3rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 100;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1.2rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tab-btn:hover {
+    background: rgba(30, 64, 175, 0.05);
+    color: var(--primary-blue);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 5%;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-title i {
+    color: var(--accent-gold);
+    font-size: 2rem;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===== GUIDANCE CARDS ===== */
+.guidance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.guidance-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.guidance-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.guidance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--accent-cyan));
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-md);
+}
+
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.card-description {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.card-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.card-list li {
+    padding: 0.8rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-list li:last-child {
+    border-bottom: none;
+}
+
+.card-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 24px;
+    height: 24px;
+    background: rgba(6, 182, 212, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== SECTION HIGHLIGHTS ===== */
+.highlight-section {
+    background: linear-gradient(135deg, #F0F6FF 0%, #FFFFFF 100%);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    margin: 3rem 0;
+    border-left: 5px solid var(--accent-gold);
+    position: relative;
+}
+
+.highlight-icon {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.highlight-content {
+    margin-left: 2rem;
+}
+
+.highlight-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.highlight-text {
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ===== EXAMPLE SECTIONS ===== */
+.example-section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    margin: 3rem 0;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.example-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.example-header i {
+    color: var(--accent-cyan);
+    font-size: 1.5rem;
+}
+
+.example-content {
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.example-content p {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--border-color);
+}
+
+/* ===== COMPARISON SECTION ===== */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.comparison-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.comparison-card.good {
+    border-color: #10B981;
+}
+
+.comparison-card.bad {
+    border-color: #EF4444;
+}
+
+.comparison-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.comparison-header i {
+    font-size: 1.8rem;
+}
+
+.comparison-card.good .comparison-header i {
+    color: #10B981;
+}
+
+.comparison-card.bad .comparison-header i {
+    color: #EF4444;
+}
+
+.comparison-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.comparison-list {
+    list-style: none;
+}
+
+.comparison-list li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-dark);
+}
+
+.comparison-list li:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+.comparison-card.good .comparison-list li:before {
+    content: '✓';
+    color: #10B981;
+}
+
+.comparison-card.bad .comparison-list li:before {
+    content: '✗';
+    color: #EF4444;
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 4rem 5% 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--accent-cyan);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 2.6rem;
+    }
+    
+    .tab-navigation {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .guidance-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 3rem 5% 2rem;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .guidance-card {
+        padding: 2rem;
+    }
+    
+    .highlight-section {
+        padding: 2rem;
+    }
+    
+    .header-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .badge {
+        width: 100%;
+        justify-content: center;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Statement of Purpose (SOP) & CV Support</h1>
-  <p>We don’t write SOPs. We provide premium formats + powerful samples.</p>
-  <span class="tag">Professional • Clean • Scholarship Ready</span>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-pattern"></div>
+    <div class="header-content">
+        <h1 class="page-title">Professional SOP & CV Guide</h1>
+        <p class="page-subtitle">
+            Master the art of creating scholarship-winning documents with expert guidance and proven templates
+        </p>
+        <div class="header-badges">
+            <div class="badge">
+                <i class="fas fa-medal"></i>
+                <span>Scholarship-Ready Templates</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-check-circle"></i>
+                <span>Expert-Approved Structure</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-graduation-cap"></i>
+                <span>University-Specific Guidelines</span>
+            </div>
+        </div>
+    </div>
 </header>
 
-<div class="section">
-  <h2>📌 SOP Format (Follow This Structure)</h2>
-  <ul>
-    <li>🔹 Introduction & Academic Background</li>
-    <li>🔹 Academic Journey & Key Learning</li>
-    <li>🔹 Why This Course?</li>
-    <li>🔹 Why This Country / University?</li>
-    <li>🔹 Skills, Achievements & Strengths</li>
-    <li>🔹 Future Career Goals</li>
-    <li>🔹 Conclusion</li>
-  </ul>
+<!-- Tab Navigation -->
+<div class="tab-navigation">
+    <button class="tab-btn active" data-tab="sop">
+        <i class="fas fa-file-alt"></i> Statement of Purpose
+    </button>
+    <button class="tab-btn" data-tab="cv">
+        <i class="fas fa-user-tie"></i> Curriculum Vitae
+    </button>
+    <button class="tab-btn" data-tab="tips">
+        <i class="fas fa-lightbulb"></i> Expert Tips
+    </button>
 </div>
 
-<div class="section">
-  <h2>🔥 Professional SOP Sample (Long & Powerful)</h2>
+<!-- Main Content -->
+<main class="main-content">
+    
+    <!-- SOP Tab -->
+    <div class="tab-content active" id="sop-tab">
+        <div class="content-header">
+            <h2 class="section-title">
+                <i class="fas fa-file-signature"></i>
+                Statement of Purpose Master Guide
+            </h2>
+            <p class="section-subtitle">
+                Learn the proven structure and techniques to create a compelling SOP that stands out in competitive scholarship applications
+            </p>
+        </div>
+        
+        <div class="guidance-grid">
+            <div class="guidance-card">
+                <div class="card-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h3 class="card-title">Perfect Structure</h3>
+                <p class="card-description">
+                    Follow this proven 7-part structure used by successful scholarship applicants worldwide
+                </p>
+                <ul class="card-list">
+                    <li><strong>Introduction:</strong> Academic background & motivation</li>
+                    <li><strong>Academic Journey:</strong> Key learnings & achievements</li>
+                    <li><strong>Program Fit:</strong> Why this specific program?</li>
+                    <li><strong>University Choice:</strong> Why this university/country?</li>
+                    <li><strong>Skills Showcase:</strong> Relevant abilities & experience</li>
+                    <li><strong>Future Goals:</strong> Short & long-term objectives</li>
+                    <li><strong>Conclusion:</strong> Final pitch & fit statement</li>
+                </ul>
+            </div>
+            
+            <div class="guidance-card">
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="card-title">Ideal Length & Format</h3>
+                <p class="card-description">
+                    Optimize your SOP for different scholarship requirements and evaluation processes
+                </p>
+                <ul class="card-list">
+                    <li><strong>Word Count:</strong> 800-1200 words (1-2 pages)</li>
+                    <li><strong>Font & Size:</strong> Times New Roman/Calibri, 11-12pt</li>
+                    <li><strong>Spacing:</strong> 1.5 line spacing with margins</li>
+                    <li><strong>File Format:</strong> PDF for all submissions</li>
+                    <li><strong>Naming:</strong> "SOP_Name_University.pdf"</li>
+                    <li><strong>Header:</strong> Include name & program applied</li>
+                    <li><strong>Proofreading:</strong> Minimum 3 revisions</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="highlight-section">
+            <div class="highlight-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="highlight-content">
+                <h3 class="highlight-title">Proven Opening Strategy</h3>
+                <p class="highlight-text">
+                    Start with a compelling hook that showcases your passion and motivation. Avoid generic openings like "I am writing to apply...". Instead, begin with a specific experience, achievement, or realization that sparked your interest in the field. Connect this directly to why you're applying for this specific program at this particular university.
+                </p>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <div class="example-header">
+                <i class="fas fa-file-pen"></i>
+                <h3>Sample SOP Opening (Strong Example)</h3>
+            </div>
+            <div class="example-content">
+                <p>
+                    "My fascination with sustainable energy began during a field study in rural Bangladesh, where I witnessed first-hand how solar microgrids transformed an entire community's quality of life. This experience, combined with my academic training in Electrical Engineering at XYZ University, has solidified my commitment to advancing renewable energy technologies..."
+                </p>
+                <p>
+                    "Having completed my Bachelor's in Computer Science with distinction, I discovered my passion for artificial intelligence while developing a predictive model for early disease detection. This project not only earned me the University Research Excellence Award but also revealed the immense potential of machine learning in solving real-world healthcare challenges..."
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CV Tab -->
+    <div class="tab-content" id="cv-tab">
+        <div class="content-header">
+            <h2 class="section-title">
+                <i class="fas fa-user-tie"></i>
+                Scholarship CV Masterclass
+            </h2>
+            <p class="section-subtitle">
+                Create a professional CV that showcases your academic excellence and potential to scholarship committees
+            </p>
+        </div>
+        
+        <div class="guidance-grid">
+            <div class="guidance-card">
+                <div class="card-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="card-title">Optimal CV Structure</h3>
+                <p class="card-description">
+                    Essential sections for a scholarship-winning CV in correct order
+                </p>
+                <ul class="card-list">
+                    <li><strong>Contact Information:</strong> Professional details only</li>
+                    <li><strong>Academic Profile:</strong> Brief 3-4 line summary</li>
+                    <li><strong>Education:</strong> Reverse chronological order</li>
+                    <li><strong>Research Experience:</strong> Projects & publications</li>
+                    <li><strong>Professional Experience:</strong> Relevant positions</li>
+                    <li><strong>Technical Skills:</strong> Categorized & quantified</li>
+                    <li><strong>Awards & Honors:</strong> Academic achievements</li>
+                    <li><strong>Certifications & Training:</strong> Additional qualifications</li>
+                    <li><strong>Languages:</strong> Proficiency levels clearly stated</li>
+                    <li><strong>References:</strong> "Available upon request"</li>
+                </ul>
+            </div>
+            
+            <div class="guidance-card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="card-title">Quantify Your Achievements</h3>
+                <p class="card-description">
+                    Transform your experiences into measurable accomplishments
+                </p>
+                <ul class="card-list">
+                    <li><strong>Instead of:</strong> "Worked on a research project"</li>
+                    <li><strong>Write:</strong> "Co-authored research paper published in XYZ Journal (Impact Factor: 4.2)"</li>
+                    <li><strong>Instead of:</strong> "Helped organize events"</li>
+                    <li><strong>Write:</strong> "Coordinated team of 15 volunteers for international conference with 300+ attendees"</li>
+                    <li><strong>Instead of:</strong> "Improved system performance"</li>
+                    <li><strong>Write:</strong> "Optimized algorithm reducing processing time by 40%"</li>
+                    <li><strong>Instead of:</strong> "Received good grades"</li>
+                    <li><strong>Write:</strong> "Graduated in top 5% of class with CGPA 3.9/4.0"</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card good">
+                <div class="comparison-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h4 class="comparison-title">CV Do's</h4>
+                </div>
+                <ul class="comparison-list">
+                    <li>Keep it concise (1-2 pages maximum)</li>
+                    <li>Use action verbs (Led, Developed, Achieved)</li>
+                    <li>Quantify achievements with numbers</li>
+                    <li>Tailor for each scholarship application</li>
+                    <li>Proofread multiple times</li>
+                    <li>Use consistent formatting</li>
+                    <li>Save as PDF with proper name</li>
+                </ul>
+            </div>
+            
+            <div class="comparison-card bad">
+                <div class="comparison-header">
+                    <i class="fas fa-times-circle"></i>
+                    <h4 class="comparison-title">CV Don'ts</h4>
+                </div>
+                <ul class="comparison-list">
+                    <li>Don't include irrelevant personal details</li>
+                    <li>Avoid spelling and grammatical errors</li>
+                    <li>Don't use unprofessional email addresses</li>
+                    <li>Avoid cluttered formatting</li>
+                    <li>Don't exaggerate or falsify information</li>
+                    <li>Avoid using photos (unless required)</li>
+                    <li>Don't include references' contact details</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <div class="example-header">
+                <i class="fas fa-file-contract"></i>
+                <h3>Sample CV Section (Education)</h3>
+            </div>
+            <div class="example-content">
+                <p>
+                    <strong>MASTER OF SCIENCE IN DATA SCIENCE</strong><br>
+                    Expected Graduation: June 2026 | GPA: 3.8/4.0<br>
+                    University of Technology, City, Country<br>
+                    • Relevant Coursework: Machine Learning, Big Data Analytics, Statistical Inference<br>
+                    • Thesis: "Predictive Modeling for Renewable Energy Optimization"<br>
+                    • Awards: Dean's List (All Semesters), Graduate Research Fellowship
+                </p>
+                <p>
+                    <strong>BACHELOR OF ENGINEERING IN COMPUTER SCIENCE</strong><br>
+                    Graduated: May 2022 | CGPA: 3.9/4.0 (Summa Cum Laude)<br>
+                    National University, City, Country<br>
+                    • Dissertation: "AI-Powered Diagnostic System for Early Disease Detection" (Grade: A+)<br>
+                    • Honors: University Gold Medalist, President's Academic Excellence Award<br>
+                    • Leadership: President, Computer Science Society (2021-2022)
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tips Tab -->
+    <div class="tab-content" id="tips-tab">
+        <div class="content-header">
+            <h2 class="section-title">
+                <i class="fas fa-lightbulb"></i>
+                Expert Application Tips
+            </h2>
+            <p class="section-subtitle">
+                Insider strategies and best practices from successful scholarship recipients and evaluators
+            </p>
+        </div>
+        
+        <div class="guidance-grid">
+            <div class="guidance-card">
+                <div class="card-icon">
+                    <i class="fas fa-magnifying-glass"></i>
+                </div>
+                <h3 class="card-title">Research & Customization</h3>
+                <p class="card-description">
+                    Scholarship committees can spot generic applications instantly
+                </p>
+                <ul class="card-list">
+                    <li>Research each university's specific research focus</li>
+                    <li>Mention 2-3 professors whose work aligns with your interests</li>
+                    <li>Reference specific courses from the program curriculum</li>
+                    <li>Connect your goals with the university's mission statement</li>
+                    <li>Tailor each application - no copy-paste approach</li>
+                    <li>Align with the scholarship's specific objectives</li>
+                    <li>Use the correct terminology for each country/region</li>
+                </ul>
+            </div>
+            
+            <div class="guidance-card">
+                <div class="card-icon">
+                    <i class="fas fa-people-arrows"></i>
+                </div>
+                <h3 class="card-title">Networking & Recommendations</h3>
+                <p class="card-description">
+                    Build strong relationships for powerful recommendation letters
+                </p>
+                <ul class="card-list">
+                    <li>Request recommendations 6-8 weeks before deadline</li>
+                    <li>Provide recommenders with your CV and SOP draft</li>
+                    <li>Share specific achievements you'd like them to highlight</li>
+                    <li>Choose recommenders who know you academically</li>
+                    <li>Follow up politely if letters are delayed</li>
+                    <li>Send thank you notes after submission</li>
+                    <li>Maintain connections even after application</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="highlight-section">
+            <div class="highlight-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="highlight-content">
+                <h3 class="highlight-title">Application Timeline Strategy</h3>
+                <p class="highlight-text">
+                    <strong>6-8 Months Before Deadline:</strong> Research programs, prepare for standardized tests, identify recommenders<br>
+                    <strong>4-6 Months Before:</strong> Draft initial SOP, compile CV, gather transcripts<br>
+                    <strong>2-4 Months Before:</strong> Revise documents, request recommendations, prepare portfolio<br>
+                    <strong>1-2 Months Before:</strong> Finalize all documents, complete online forms<br>
+                    <strong>2 Weeks Before:</strong> Submit applications, confirm receipt<br>
+                    <strong>After Submission:</strong> Prepare for interviews, follow up if needed
+                </p>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <div class="example-header">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Common Interview Questions & Strategies</h3>
+            </div>
+            <div class="example-content">
+                <p>
+                    <strong>"Tell us about yourself."</strong><br>
+                    Prepare a 2-minute professional summary focusing on academic journey, key achievements, and motivation for this scholarship.
+                </p>
+                <p>
+                    <strong>"Why this specific scholarship?"</strong><br>
+                    Connect your goals with the scholarship's mission. Mention specific aspects that align with your values and objectives.
+                </p>
+                <p>
+                    <strong>"What will you contribute to our community?"</strong><br>
+                    Highlight unique experiences, skills, and perspectives you bring. Be specific about potential contributions.
+                </p>
+                <p>
+                    <strong>"Where do you see yourself in 5 years?"</strong><br>
+                    Present a clear career path showing how this scholarship is essential for achieving your goals.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
 
-  <p>
-  My name is ______ and I have completed my Bachelor's degree in ______. Throughout my academic journey, 
-  I have consistently been driven by curiosity, dedication, and a strong determination to build a successful 
-  professional future. During my studies, I developed a deep interest in ______ which inspired me to pursue 
-  higher education and enhance my knowledge in this field.
-  </p>
-
-  <p>
-  This master's program is a perfect match for my academic background and future ambitions. 
-  It offers a strong curriculum, modern teaching methods, practical learning exposure, and 
-  experienced faculty members who are well-recognized in their domains. I strongly believe that 
-  studying in ______ will provide me with international exposure, advanced learning opportunities, 
-  and a globally competitive academic environment.
-  </p>
-
-  <p>
-  Additionally, the education system of ______ is known for its quality, innovation, and real-world 
-  application of knowledge. The multicultural environment, research opportunities, and high academic 
-  standards make it an ideal destination for my studies. I am confident that this program will help me 
-  develop critical thinking, analytical abilities, leadership qualities, and professional competence.
-  </p>
-
-  <p>
-  After completing my degree, my goal is to return to my home country and utilize the knowledge, 
-  skills, and global exposure I gained to contribute to the development of my community and industry. 
-  I aim to work in ______ sector and gradually progress towards a leadership role where I can make a 
-  meaningful impact.
-  </p>
-
-  <p>
-  I am a highly motivated, disciplined, and hardworking individual. I am eager to learn, adapt, 
-  and face new challenges. I believe that this opportunity will not only shape my career but also 
-  help me grow personally and professionally.
-  </p>
-
-  <p>
-  Thank you for considering my application. I look forward to the opportunity to be a part of this 
-  esteemed academic institution.
-  </p>
-</div>
-
-<div class="section">
-  <h2>📌 CV Format (Best For Scholarships)</h2>
-  <ul>
-    <li>✔ Name & Contact Details</li>
-    <li>✔ Short Professional Summary</li>
-    <li>✔ Education Details</li>
-    <li>✔ Skills</li>
-    <li>✔ Projects / Experience</li>
-    <li>✔ Achievements</li>
-    <li>✔ Certifications</li>
-    <li>✔ Languages</li>
-  </ul>
-</div>
-
-<div class="section">
-  <h2>🔥 Sample CV</h2>
-  <p><b>Name:</b> ______</p>
-  <p><b>Email:</b> ______</p>
-  <p><b>Education:</b> B.Com / Bachelor in ______ (Year)</p>
-  <p><b>Skills:</b> Management • Teamwork • Communication • Computer Skills</p>
-  <p><b>Achievements:</b> Academic Excellence • Participation Certificates</p>
-  <p><b>Career Goal:</b> To build a strong professional career and contribute positively to society.</p>
-</div>
-
-<footer>
-  <p>Premium • Simple • Professional • Scholarship Focused</p>
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>GlobalScholar</h4>
+            <p>Your trusted partner in scholarship preparation. We provide expert guidance for SOP writing, CV development, and strategic application planning.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Essential Resources</h4>
+            <ul class="footer-links">
+                <li><a href="#"><i class="fas fa-arrow-right"></i> Scholarship Database</a></li>
+                <li><a href="#"><i class="fas fa-arrow-right"></i> Application Timeline Calculator</a></li>
+                <li><a href="#"><i class="fas fa-arrow-right"></i> Interview Preparation Guide</a></li>
+                <li><a href="#"><i class="fas fa-arrow-right"></i> Recommendation Letter Templates</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Quick Access</h4>
+            <ul class="footer-links">
+                <li><a href="#"><i class="fas fa-external-link-alt"></i> University Ranking Guides</a></li>
+                <li><a href="#"><i class="fas fa-external-link-alt"></i> Country-Specific Requirements</a></li>
+                <li><a href="#"><i class="fas fa-external-link-alt"></i> Visa Application Support</a></li>
+                <li><a href="#"><i class="fas fa-external-link-alt"></i> Pre-departure Checklist</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 GlobalScholar | Created by Vijaykumar Ponnam</p>
+        <p style="margin-top: 0.5rem;">All content is for educational guidance. Unauthorized commercial use prohibited.</p>
+    </div>
 </footer>
 
+<script>
+// Tab Navigation
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+        
+        // Update active tab button
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Show active tab content
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === `${tabId}-tab`) {
+                content.classList.add('active');
+            }
+        });
+    });
+});
+
+// Add hover animations to guidance cards
+const guidanceCards = document.querySelectorAll('.guidance-card');
+guidanceCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-8px)';
+        card.style.boxShadow = 'var(--shadow-lg)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'var(--shadow-md)';
+    });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add scroll effect to tab navigation
+window.addEventListener('scroll', () => {
+    const tabNav = document.querySelector('.tab-navigation');
+    if (window.scrollY > 300) {
+        tabNav.style.position = 'sticky';
+        tabNav.style.top = '20px';
+        tabNav.style.zIndex = '1000';
+    } else {
+        tabNav.style.position = 'relative';
+        tabNav.style.top = 'auto';
+    }
+});
+</script>
 </body>
 </html>
+
