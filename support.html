@@ -2,168 +2,895 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GlobalScholar Support</title>
+<title>GlobalScholar Support Center</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#f1f4ff;
-  color:#222;
+/* ===== VARIABLES & RESET ===== */
+:root {
+    --primary-blue: #1E40AF;
+    --primary-dark: #0F172A;
+    --accent-gold: #F59E0B;
+    --accent-cyan: #06B6D4;
+    --light-bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text-dark: #1F2937;
+    --text-light: #6B7280;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+    --border-radius: 16px;
+    --transition: all 0.3s ease;
 }
 
-/* HEADER */
-header{
-  text-align:center;
-  padding:70px 8%;
-  background:linear-gradient(135deg,#0f1d3b,#0a4da2);
-  color:white;
-}
-header h1{
-  margin:0;
-  font-size:42px;
-  letter-spacing:1px;
-}
-header p{
-  margin-top:12px;
-  opacity:.9;
-  font-size:17px;
-}
-.badge{
-  margin-top:15px;
-  display:inline-block;
-  padding:7px 16px;
-  border-radius:30px;
-  background:white;
-  color:#0a4da2;
-  font-weight:600;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* SECTION CARD */
-.section{
-  width:85%;
-  margin:40px auto;
-  background:white;
-  border-radius:18px;
-  padding:35px;
-  box-shadow:0 12px 30px rgba(0,0,0,.12);
-}
-.section h2{
-  margin:0 0 10px;
-  color:#0a4da2;
-}
-.section p{
-  line-height:1.7;
-  color:#444;
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-  margin-top:20px;
-}
-.box{
-  background:#f7f9ff;
-  padding:22px;
-  border-radius:14px;
-  border:1px solid #d7e2ff;
-}
-.box h3{
-  color:#0a4da2;
-  margin-top:0;
+/* ===== HEADER ===== */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+    padding: 5rem 5% 4rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
 }
 
-/* EMAIL BOX */
-.mail-box{
-  display:inline-block;
-  padding:14px 22px;
-  background:#f7f9ff;
-  border-radius:12px;
-  border:1px solid #cfd9ff;
-  font-weight:600;
-  color:#0a4da2;
-  margin-top:10px;
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px 0;
-  margin-top:40px;
-  background:#0f1d3b;
-  color:white;
-  border-top:3px solid #ffcc00;
+.header-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
-footer p{opacity:.9;}
+
+.page-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+}
+
+.header-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.8rem 1.8rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    color: white;
+    font-size: 0.95rem;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    max-width: 1200px;
+    margin: -2rem auto 4rem;
+    padding: 0 5%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Support Categories */
+.support-section {
+    margin-bottom: 4rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-title i {
+    color: var(--accent-gold);
+    font-size: 2rem;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Support Grid */
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.support-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(30, 64, 175, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.support-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-cyan);
+}
+
+.support-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--accent-cyan));
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-md);
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.card-content {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.card-features {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.card-features li {
+    padding: 0.6rem 0;
+    color: var(--text-dark);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.card-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* FAQ Section */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(30, 64, 175, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.faq-question h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-icon {
+    color: var(--primary-blue);
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: var(--accent-cyan);
+}
+
+.faq-answer {
+    color: var(--text-light);
+    line-height: 1.8;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(30, 64, 175, 0.1);
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(248, 250, 252, 0.8) 100%);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.contact-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contact-subtitle {
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.contact-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    min-width: 250px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.contact-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.email-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 50px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    margin-top: 1rem;
+    border: 2px solid rgba(30, 64, 175, 0.1);
+}
+
+.email-box:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Response Time */
+.response-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.response-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 2rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 12px;
+    color: var(--success);
+    font-weight: 600;
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 4rem 5% 3rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-section h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--accent-cyan);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 3rem 5% 2rem;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-method {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .response-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .support-card {
+        padding: 2rem;
+    }
+    
+    .contact-section {
+        padding: 2rem;
+    }
+    
+    .header-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .badge {
+        width: 100%;
+        justify-content: center;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Support & Guidance</h1>
-  <p>We help students with scholarship doubts, SOP / CV clarity, admissions questions and guidance.</p>
-  <span class="badge">Student Friendly • Trusted • Helpful</span>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-pattern"></div>
+    <div class="header-content">
+        <h1 class="page-title">GlobalScholar Support Center</h1>
+        <p class="page-subtitle">
+            Expert guidance and personalized support for your scholarship journey, from application to admission
+        </p>
+        <div class="header-badges">
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Trusted Guidance</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-clock"></i>
+                <span>24/7 Support</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Expert Mentors</span>
+            </div>
+        </div>
+    </div>
 </header>
 
-<div class="section">
-  <h2>💡 How We Support You</h2>
-  <p>Our support section is created to guide students so they never feel confused or stuck during scholarship and admission processes.</p>
+<!-- Main Content -->
+<main class="main-content">
+    
+    <!-- Support Services Section -->
+    <section class="support-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-hands-helping"></i>
+                Comprehensive Support Services
+            </h2>
+            <p class="section-subtitle">
+                We provide end-to-end guidance for every step of your scholarship and admission journey
+            </p>
+        </div>
+        
+        <div class="support-grid">
+            <div class="support-card">
+                <div class="card-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3 class="card-title">Scholarship Navigation</h3>
+                <p class="card-content">
+                    Expert guidance on finding, evaluating, and applying for fully funded scholarships worldwide.
+                </p>
+                <ul class="card-features">
+                    <li>Eligibility assessment</li>
+                    <li>Deadline tracking</li>
+                    <li>Document checklist</li>
+                    <li>Country-specific guidance</li>
+                </ul>
+            </div>
+            
+            <div class="support-card">
+                <div class="card-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 class="card-title">Document Preparation</h3>
+                <p class="card-content">
+                    Professional assistance with SOP, CV, recommendation letters, and application essays.
+                </p>
+                <ul class="card-features">
+                    <li>SOP structure & samples</li>
+                    <li>CV formatting guidance</li>
+                    <li>Letter of recommendation tips</li>
+                    <li>Essay review framework</li>
+                </ul>
+            </div>
+            
+            <div class="support-card">
+                <div class="card-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3 class="card-title">University Selection</h3>
+                <p class="card-content">
+                    Strategic guidance for choosing the right universities and programs based on your profile.
+                </p>
+                <ul class="card-features">
+                    <li>University ranking analysis</li>
+                    <li>Program fit assessment</li>
+                    <li>Country comparison</li>
+                    <li>Admission probability</li>
+                </ul>
+            </div>
+            
+            <div class="support-card">
+                <div class="card-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="card-title">Interview Preparation</h3>
+                <p class="card-content">
+                    Comprehensive preparation for scholarship and university admission interviews.
+                </p>
+                <ul class="card-features">
+                    <li>Mock interview sessions</li>
+                    <li>Common question practice</li>
+                    <li>Presentation skills</li>
+                    <li>Confidence building</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="support-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-question-circle"></i>
+                Frequently Asked Questions
+            </h2>
+            <p class="section-subtitle">
+                Quick answers to common questions about our support services
+            </p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3><i class="fas fa-question"></i> Do you guarantee scholarship awards?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No. We provide expert guidance, support, and resources to maximize your chances, but final selection decisions are made by scholarship committees and universities. Our role is to help you present the strongest possible application.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3><i class="fas fa-question"></i> Do you write SOPs or CVs for students?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We provide professional templates, structure guidance, and review services, but we don't write documents from scratch. Our approach empowers you to create authentic, personalized documents while ensuring they meet professional standards.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3><i class="fas fa-question"></i> Can I apply without IELTS or TOEFL?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>It depends on the country, university, and specific scholarship requirements. Some programs offer English proficiency waivers or accept alternative proofs. We provide guidance based on your target institutions and available options.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3><i class="fas fa-question"></i> What's your response time for queries?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We typically respond within 24-48 hours for email queries. Priority support is available for urgent deadlines. For complex consultations, we may schedule dedicated sessions to provide comprehensive guidance.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3><i class="fas fa-question"></i> Are your services free or paid?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer both free guidance resources and premium personalized support services. Basic queries and template access are free, while dedicated mentorship, document reviews, and extensive consultations are offered through our premium plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="contact-title">Get Personalized Support</h2>
+        <p class="contact-subtitle">
+            Contact us for specific guidance on your scholarship journey. We're here to help you navigate every step.
+        </p>
+        
+        <div class="contact-methods">
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-info">
+                    <h4>Email Support</h4>
+                    <p>For detailed queries and document reviews</p>
+                </div>
+                <a href="mailto:support@globalscholar.com" class="email-box">
+                    <i class="fas fa-paper-plane"></i>
+                    support@globalscholar.com
+                </a>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="contact-info">
+                    <h4>Consultation Sessions</h4>
+                    <p>Book one-on-one expert guidance</p>
+                </div>
+                <a href="#" class="email-box" style="background: var(--success); color: white;">
+                    <i class="fas fa-calendar-alt"></i>
+                    Schedule Session
+                </a>
+            </div>
+        </div>
+        
+        <div class="response-info">
+            <div class="response-item">
+                <i class="fas fa-clock"></i>
+                <span>Response Time: 24-48 Hours</span>
+            </div>
+            <div class="response-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Support Available: Monday - Saturday</span>
+            </div>
+        </div>
+    </section>
+</main>
 
-  <div class="grid">
-    <div class="box">
-      <h3>📚 Scholarship Doubts</h3>
-      <p>Confused about eligibility, deadlines or process? We help you understand clearly.</p>
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>GlobalScholar Support</h4>
+            <p>Your trusted partner in navigating the complex world of international scholarships and admissions. We empower students with knowledge, guidance, and strategic support.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Quick Resources</h4>
+            <ul class="footer-links">
+                <li><a href="#"><i class="fas fa-arrow-right"></i> Scholarship Database</a></li>
+                <li><a href="#"><i class="fas fa-arrow-right"></i> SOP & CV Templates</a></li>
+                <li><a href="#"><i class="fas fa-arrow-right"></i> Application Timeline</a></li>
+                <li><a href="#"><i class="fas fa-arrow-right"></i> Country Guides</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Connect With Us</h4>
+            <ul class="footer-links">
+                <li><a href="#"><i class="fas fa-question-circle"></i> FAQ Center</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Success Stories</a></li>
+                <li><a href="#"><i class="fas fa-bullhorn"></i> Updates & News</a></li>
+                <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+            </ul>
+        </div>
     </div>
-
-    <div class="box">
-      <h3>📝 SOP / CV Guidance</h3>
-      <p>We don’t write SOPs, but we guide, provide format, structure & improvement ideas.</p>
+    
+    <div class="footer-bottom">
+        <p>© 2026 GlobalScholar Support Center | Created by Vijaykumar Ponnam</p>
+        <p style="margin-top: 0.5rem;">Empowering students worldwide to achieve their academic dreams through expert guidance and support</p>
     </div>
-
-    <div class="box">
-      <h3>🎓 University Guidance</h3>
-      <p>Right course, right country, right scholarship — we help you choose better.</p>
-    </div>
-
-    <div class="box">
-      <h3>❓ Application Help</h3>
-      <p>Documents, forms, mistakes to avoid, and general support throughout the journey.</p>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>❓ Frequently Asked Questions</h2>
-
-  <p><b>Do you guarantee scholarships?</b><br>
-  No. We only guide and support. Final selection depends on scholarship authorities.</p>
-
-  <p><b>Do you write SOP for students?</b><br>
-  No. We only provide formats, samples and guidance.</p>
-
-  <p><b>Can I apply without IELTS?</b><br>
-  Depends on country and scholarship — we guide based on your case.</p>
-</div>
-
-<div class="section">
-  <h2>📩 Need Help?</h2>
-  <p>If you need guidance, contact us via email. We will try to assist you.</p>
-
-  <div class="mail-box">
-    globalsupport@gmail.com
-  </div>
-</div>
-
-<footer>
-  <p>GlobalScholar Support — Helping Students Move Forward</p>
 </footer>
 
+<script>
+// FAQ Toggle Functionality
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+        // Close other FAQ items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+            }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+    });
+});
+
+// Add hover animations to support cards
+const supportCards = document.querySelectorAll('.support-card');
+supportCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-8px)';
+        card.style.boxShadow = 'var(--shadow-lg)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'var(--shadow-md)';
+    });
+});
+
+// Add smooth scroll for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.support-card, .faq-item, .contact-method').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(element);
+});
+
+// Email box hover effect
+const emailBoxes = document.querySelectorAll('.email-box');
+emailBoxes.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+        box.style.transform = 'translateY(-3px)';
+        box.style.boxShadow = 'var(--shadow-lg)';
+    });
+    
+    box.addEventListener('mouseleave', () => {
+        box.style.transform = 'translateY(0)';
+        box.style.boxShadow = 'var(--shadow-md)';
+    });
+});
+</script>
 </body>
 </html>
+
+
